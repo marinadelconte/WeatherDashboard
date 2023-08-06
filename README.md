@@ -11,21 +11,16 @@ Provide a short description explaining the what, why, and how of your project. U
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+To use, the user will enter a location into the search bar and hit search. They should then see the current day's forecast for that location as well as the forecast for the next five days.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+The weather dashboard application can be accessed via the following url:
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+Below is a screenshot of the webpage:
 
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
+While working on this assignment, I used the following resources for assistance:
 
