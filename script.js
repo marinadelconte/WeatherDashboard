@@ -24,12 +24,40 @@ function getWeatherByCoordinates(lat, lon) {
     .then(response => response.json())
     .then(data => {
 
-        console.log(data.list)
-        // let temp = weather.temp;
-        // let wind = weather[list.wind.speed];
-        // let humidity = weather[list.main.humidity];
+        //first card
+        console.log(data.list[0])
+        
+
+        console.log(`  <div class="card" style="width: 16rem; height: 17rem;">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted"></h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+        </div>
+    </div>`)
+
+
+        //second card
+        console.log(data.list[8])
+
+        //third card
+        console.log(data.list[16])
+
+        //fourth card
+        console.log(data.list[24])
+
+        //fifth card
+        console.log(data.list[32])
+
+        //sixth card 
+        console.log(data.list[40])
+
+        
+      
 })
 }
-fetchButton.addEventListener('click', function() {
+fetchButton.addEventListener('click', function(getCoordinates) {
+getCoordinates.preventDefault();
 
 })

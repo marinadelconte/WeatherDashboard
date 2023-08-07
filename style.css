@@ -1,0 +1,4 @@
+.current-day {
+    flex-wrap: wrap;
+    flex-direction: row;
+}
