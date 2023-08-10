@@ -1,8 +1,17 @@
-.current-day {
+/* .current-day {
     flex-wrap: wrap;
     flex-direction: row;
-}
+} */
 
 form {
     margin-bottom: 20px;
+}
+
+#historyContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-left: 0%;
+    margin: 10px;
 }

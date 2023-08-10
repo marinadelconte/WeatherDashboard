@@ -35,9 +35,6 @@ function historySearch (city) {
             return (getWeatherByCoordinates(lat, lon))
         })
     }
-//     saveCity(userInput.value);
-//     renderHistory();
-// }
 
 function renderCurrentDay(data) {
     console.log(data)
@@ -54,7 +51,6 @@ function renderCurrentDay(data) {
     columnElement.textContent = "";
     columnElement.insertAdjacentHTML("beforeend", html);
 }
-
 
 
 function renderFiveDays(data) {
