@@ -14,7 +14,8 @@ The weather dashboard application can be accessed via the following url:
 https://marinadelconte.github.io/WeatherDashboard/ 
 
 Below is a screenshot of the webpage:
-![Screenshot (14)](https://github.com/marinadelconte/WeatherDashboard/assets/137957098/bda34079-272b-49f2-afe7-4f5be2355349)
+![Screenshot (16)](https://github.com/marinadelconte/WeatherDashboard/assets/137957098/eded0731-b47d-4eaa-838a-8914c7056434)
+
 
 ## Credits
 
