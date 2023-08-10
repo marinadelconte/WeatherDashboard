@@ -13,7 +13,7 @@ let cityHistoryElement = document.querySelector("#historyContainer");
 
 function getCoordinates(event, city) {
     event.preventDefault();
-    fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + userInput.value + "&limit=1&units=imperial&appid=" + apiKey)
+    fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + userInput.value + "&limit=1&units=imperial&appid=" + apiKey)
         .then(response => response.json())
         .then(cityFound => {
             let searchCity = cityFound[0];
@@ -26,7 +26,7 @@ function getCoordinates(event, city) {
 }
 
 function historySearch (city) {
-    fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&units=imperial&appid=" + apiKey)
+    fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&units=imperial&appid=" + apiKey)
         .then(response => response.json())
         .then(cityFound => {
             let searchCity = cityFound[0];
@@ -73,7 +73,7 @@ function renderFiveDays(data) {
 
 function getWeatherByCoordinates(lat, lon) {
     console.log(lat, lon)
-    fetch("http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + apiKey)
+    fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + apiKey)
         .then(response => response.json())
         .then(data => {
 
@@ -85,7 +85,7 @@ search.addEventListener('click', getCoordinates)
 console.log(userInput.value);
 
 function getCurrentWeather(lat, lon) {
-    fetch("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + apiKey)
+    fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + apiKey)
         .then(response => response.json())
         .then(data => {
 
