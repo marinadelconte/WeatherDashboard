@@ -8,9 +8,10 @@ let search = document.querySelector("#search");
 let userInput = document.querySelector("#userInput");
 let rowElement = document.querySelector(".row");
 let columnElement = document.querySelector(".column");
+let cityHistoryElement = document.querySelector("#historyContainer");
 
 
-function getCoordinates(event) {
+function getCoordinates(event, city) {
     event.preventDefault();
     fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + userInput.value + "&limit=1&units=imperial&appid=" + apiKey)
         .then(response => response.json())
@@ -20,13 +21,29 @@ function getCoordinates(event) {
             let lon = searchCity.lon;
             return (getWeatherByCoordinates(lat, lon))
         })
-
+    saveCity(userInput.value);
+    renderHistory();
 }
 
+function historySearch (city) {
+    fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&units=imperial&appid=" + apiKey)
+        .then(response => response.json())
+        .then(cityFound => {
+            let searchCity = cityFound[0];
+            let lat = searchCity.lat;
+            let lon = searchCity.lon;
+            return (getWeatherByCoordinates(lat, lon))
+        })
+    }
+//     saveCity(userInput.value);
+//     renderHistory();
+// }
+
 function renderCurrentDay(data) {
+    console.log(data)
     const html = `   <div class="card col-6" style="width: 32rem; height: 20rem;">
 <div class="card-body">
-        <h2 class="card-title">City: ${userInput.value}</h2>
+        <h2 class="card-title">City: ${data.name}</h2>
         <h6 class="card-title">Date: ${dayjs().format("MM/DD/YYYY")}</h6>
         <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png"/>
         <p class="card-title">Temp: ${data.main.temp}°F</p>
@@ -34,12 +51,14 @@ function renderCurrentDay(data) {
         <p class="card-text">Wind Speed: ${data.wind.speed} mph</p>
 </div>
 </div>`
+    columnElement.textContent = "";
     columnElement.insertAdjacentHTML("beforeend", html);
 }
 
 
 
 function renderFiveDays(data) {
+    rowElement.textContent = "";
     for (let i = 0; i < data.list.length; i += 8) {
         console.log(data.list[i]);
         const html = `   <div class="card col-2" style="width: 16rem; height: 17rem;">
@@ -79,4 +98,26 @@ function getCurrentWeather(lat, lon) {
         })
 }
 
+function saveCity(city) {
+    console.log(city);
+    const cityHistory = JSON.parse(localStorage.getItem("history")) || [];
+    cityHistory.push(city);
+    console.log(cityHistory);
+    localStorage.setItem("history", JSON.stringify(cityHistory));
+}
 
+function renderHistory() {
+    const cityHistory = JSON.parse(localStorage.getItem("history")) || [];
+    cityHistoryElement.textContent = "";
+    for (let i = cityHistory.length - 1; i > 0; i--) {
+        if (i > cityHistory.length - 6) {
+            const button = document.createElement("button");
+            button.textContent = cityHistory[i];
+            button.addEventListener("click", function() {
+                historySearch(cityHistory[i])
+            } )
+            cityHistoryElement.appendChild(button);
+        }
+    }
+}
+renderHistory();
