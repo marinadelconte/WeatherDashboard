@@ -11,9 +11,10 @@ To use, the user will enter a city into the search bar and hit search. They shou
 ## Usage
 
 The weather dashboard application can be accessed via the following url:
+https://marinadelconte.github.io/WeatherDashboard/ 
 
 Below is a screenshot of the webpage:
-
+![Screenshot (14)](https://github.com/marinadelconte/WeatherDashboard/assets/137957098/bda34079-272b-49f2-afe7-4f5be2355349)
 
 ## Credits
 
