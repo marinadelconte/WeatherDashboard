@@ -1,4 +1,4 @@
-let apiKey = "291f76a1b16ded2c803cb4e3fa8f978f";
+let apiKey = "";
 let fetchButton = document.querySelector(".btn");
 let cityName = document.querySelector("#cityName");
 let temp = document.querySelector("#temp");
