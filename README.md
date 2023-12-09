@@ -5,7 +5,7 @@
 The Weather Dashboard will provide the current day and next five day weather forecast for the city that the user inputs into the search bar. Results will return the temperature, humidity, and wind speed, as well as a graphic that correlates with the weather condition.
 
 ## Technologies Used
-To create this applications, I used the following technologies: JavaScript, HTML, CSS, Local Storage, npm, and node.js.
+To create this application, I used the following technologies: JavaScript, HTML, CSS, Local Storage, npm, and node.js.
 
 I also used the following API: https://openweathermap.org/forecast5/. 
 
